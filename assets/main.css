@@ -146,6 +146,9 @@ About
 Upcoming Sessions
 *****************************/
 
+.upcoming {
+  margin-bottom: 60px;
+}
 .upcoming h2 {
   color: #35495D;
   font-size: 3em;
@@ -196,4 +199,56 @@ a.register-button {
 .divider {
   border-bottom: 1px solid #E1E1E1;
   margin: 55px 0;
+}
+
+
+/*****************************
+Signup
+*****************************/
+
+.signup {
+  background-color: #569AC5;
+  padding: 60px 0;
+}
+
+.signup h2 {
+  color: #F9F9F9;
+  font-size: 4em;
+  margin-bottom: 35px;
+}
+
+.signup p {
+  color: #F9F9F9;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+#mc-embedded-subscribe-form input[type=email] {
+  padding: 12px;
+  font-size: 1.3em;
+  width: 300px;
+  border: none;
+
+  border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  -webkit-border-radius: 4px 0 0 4px;
+}
+
+#mc-embedded-subscribe {
+  font-family: "League Gothic", "Helvetica Neue","Helvetica", georgia, sans-serif;
+  color: white;
+  letter-spacing: 1px;
+  padding: 11px;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  vertical-align: top;
+  background-color: #5DD48F;
+  border: none;
+  width: 210px;
+  margin-left: -6px;
+  cursor: pointer;
+
+  border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  -webkit-border-radius: 0 4px 4px 0;
 }
