@@ -189,6 +189,10 @@ Upcoming Sessions
   -webkit-border-radius: 4px;
 }
 
+a.register-button {
+  text-decoration: none;
+}
+
 .divider {
   border-bottom: 1px solid #E1E1E1;
   margin: 55px 0;
