@@ -184,7 +184,7 @@ Upcoming Sessions
   margin-top: 15px;
   background-color: #5DD48F;
   color: white;
-  font-family: "CDLeagueGothic", "Helvetica Neue","Helvetica", georgia, sans-serif;
+  font-family: georgia, sans-serif;
   text-transform: uppercase;
   font-size: 1.2em;
   display: inline-block;
@@ -227,7 +227,7 @@ Signup: Attendees and Mentors
 }
 
 #mc-embedded-subscribe-form input[type=email] {
-  font-family: "CDLeagueGothic", "Helvetica Neue","Helvetica", georgia, sans-serif;
+  font-family: georgia, sans-serif;
   padding: 17px;
   font-size: 1em;
   width: 350px;
@@ -239,7 +239,7 @@ Signup: Attendees and Mentors
 }
 
 #mc-embedded-subscribe {
-  font-family: "CDLeagueGothic", "Helvetica Neue","Helvetica", georgia, sans-serif;
+  font-family: georgia, sans-serif;
   color: white;
   padding: 17px;
   font-size: 1em;
@@ -247,7 +247,7 @@ Signup: Attendees and Mentors
   vertical-align: top;
   background-color: #5DD48F;
   border: none;
-  width: 220px;
+  width: 240px;
   margin-left: -6px;
   cursor: pointer;
 
@@ -266,21 +266,22 @@ Mentors
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 80px 0;
+
+  padding: 70px 0;
 }
 
 .mentors h2 {
   color: #F3AE4C;
   font-size: 3em;
-  margin: 50px 0;
   display: inline-block;
+  margin-bottom: 90px;
 }
 
 .mentor-signup-link {
   text-decoration: none;
   color: #F3AE4C;
   float: right;
-  margin-top: 65px;
+  margin-top: 20px;
 }
 
 .mentor {
@@ -311,4 +312,11 @@ Mentors
 .mentor-divider {
   border-bottom: 1px solid #E1E1E1;
   margin: 80px 0;
+}
+
+.pictures h2 {
+  color: #35495D;
+  font-size: 3em;
+  text-align: center;
+  padding: 80px 0;
 }
