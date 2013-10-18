@@ -51,7 +51,7 @@
         <h1>Free coding workshops for youth</h1>
         <p>Our Dojo sessions welcome anyone 7 - 17 years old (along with their parents) and cover everything from basic HTML & CSS, to JavaScript, game development and web programming.<br> Most sessions require no prior knowledge!</p>
         <div class="video">
-          <iframe src="http://www.youtube.com/embed/vwDlqfLGjxg?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe src="http://player.vimeo.com/video/70637625" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -130,19 +130,6 @@
         <div class="mentor-divider"></div>
 
         <div class="mentor">
-          <img class="profile-pic" src="assets/images/mentors/ricky.jpg">
-          <div class="name">Ricky Cheng</div>
-          <div class="title">Mentor: Senior Sensei</div>
-          <p class="bio">As children experience the web for the first time, often times they are engrossed with feelings of curiosity and excitement. Ricky was no different. At a young age, he spent countless hours scouring the web seeking out resources and guidance with programming. Being fully aware of the struggles of self-education, these days Ricky can be found teaching middle schoolers in underprivileged communities how to code. When he's not busy doing that, he's hacking away as a full stack software engineer for a start up in NYC.</p>
-          <p class="mentor-links">
-            <a href="http://rickyc.us/" target="_blank">rickyc.us</a> | 
-            @<a href="http://twitter.com/rickyc_us" target="_blank">rickyc_us</a>
-          </p>
-        </div>
-
-        <div class="mentor-divider"></div>
-
-        <div class="mentor">
           <img class="profile-pic" src="assets/images/mentors/aidan.png">
           <div class="name">Aidan Feldman</div>
           <div class="title">Mentor: Senior Sensei</div>
@@ -177,16 +164,15 @@
       <div class="container">
         <h2>CoderDojo NYC Pictures</h2>
         <ul class="bxslider">
-          <li><img src="assets/images/slideshow/1.jpg" /></li>
-          <li><img src="assets/images/slideshow/2.jpg" /></li>
-          <li><img src="assets/images/slideshow/3.jpg" /></li>
-          <li><img src="assets/images/slideshow/4.jpg" /></li>
-          <li><img src="assets/images/slideshow/5.jpg" /></li>
-          <li><img src="assets/images/slideshow/6.jpg" /></li>
-          <li><img src="assets/images/slideshow/7.jpg" /></li>
-          <li><img src="assets/images/slideshow/8.jpg" /></li>
-          <li><img src="assets/images/slideshow/9.jpg" /></li>
-          <li><img src="assets/images/slideshow/10.jpg" /></li>
+          <li><img src="assets/images/slideshow/1.jpg" title="CoderDojo NYC - Overtone @ Beam Center 9/28/2013"/></li>
+          <li><img src="assets/images/slideshow/2.jpg" title="CoderDojo NYC - Overtone @ Beam Center 9/28/2013"/></li>
+          <li><img src="assets/images/slideshow/3.jpg" title="CoderDojo NYC - Overtone @ Beam Center 9/28/2013"/></li>
+          <li><img src="assets/images/slideshow/4.jpg" title="CoderDojo NYC - Overtone @ Beam Center 9/28/2013"/></li>
+          <li><img src="assets/images/slideshow/5.jpg" title="CoderDojo NYC - Overtone @ Beam Center 9/28/2013"/></li>
+          <li><img src="assets/images/slideshow/6.jpg" title="CoderDojo NYC - Overtone @ Beam Center 9/28/2013"/></li>
+          <li><img src="assets/images/slideshow/7.jpg" title="CoderDojo NYC - Overtone @ Beam Center 9/28/2013"/></li>
+          <li><img src="assets/images/slideshow/8.jpg" title="CoderDojo NYC - Overtone @ Beam Center 9/28/2013"/></li>
+          <li><img src="assets/images/slideshow/9.jpg" title="CoderDojo NYC - Overtone @ Beam Center 9/28/2013"/></li>
         </ul>
       </div>
     </div>
@@ -201,7 +187,7 @@
           <a href="http://flatironschool.com/" target="_blank"><img src="http://f.cl.ly/items/3p0X2p1p062z1w2Z2G3L/Screen%20Shot%202013-10-17%20at%2011.58.16%20PM.png"></a>
 
           <a href="http://hivelearningnetwork.org/" target="_blank"><img src="http://f.cl.ly/items/181i3Z0n0H3Y0L1t363A/Screen%20Shot%202013-10-17%20at%2011.56.47%20PM.png"></a>
-
+        
           <a href="http://www.thinkful.com/?utm_source=coderdojonyc&utm_medium=logo&utm_campaign=sponsor"><img src="http://rre.com/system/companies/123-logo-thinkful_l.jpg?1360357504"></a>
 
           <a href="http://www.twilio.com/" target="_blank"><img src="http://static0.twilio.com/packages/company/img/logos_icon_roundname.png"></a>
@@ -209,6 +195,7 @@
           <a href="http://www.microsoft.com/" target="_blank"><img src="http://www.recklessnewmedia.com/blog/wp-content/uploads/2012/08/New-Microsoft-Logo.png"></a>
         </div>
       </div>
+      <div class="clearfix"></div>
     </div>
 
     <footer>
@@ -223,7 +210,9 @@
 
     <script>
       $(document).ready(function(){
-        $('.bxslider').bxSlider();
+        $('.bxslider').bxSlider({
+          captions: true
+        });
       });
     </script>
   </body>
