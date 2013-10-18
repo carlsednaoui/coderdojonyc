@@ -187,6 +187,11 @@ Upcoming Sessions
   margin-bottom: 20px;
 }
 
+.event a {
+  text-decoration: none;
+  color: #569AC5;
+}
+
 .event .register-button {
   margin-top: 15px;
   background-color: #5DD48F;
@@ -200,6 +205,10 @@ Upcoming Sessions
   border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
+}
+
+.event .previous-event {
+  background-color: #CBD0D3;
 }
 
 a.register-button {
