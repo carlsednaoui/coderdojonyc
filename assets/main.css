@@ -335,7 +335,23 @@ Mentors
 Slider & Sponsors
 *****************************/
 
-.pictures h2, .sponsors h2 {
+.pictures h2 {
+  color: #35495D;
+  font-size: 3em;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.more-pictures {
+  color: #569AC5;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 80px;
+}
+
+.sponsors h2 {
   color: #35495D;
   font-size: 3em;
   text-align: center;
