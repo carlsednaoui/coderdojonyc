@@ -220,6 +220,10 @@ a.register-button {
   margin: 55px 0;
 }
 
+.divider-no-line {
+  margin: 85px 0;
+}
+
 
 /*****************************
 Signup: Attendees and Mentors
