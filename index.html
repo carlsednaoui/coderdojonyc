@@ -11,6 +11,8 @@
     <!-- Image slider requirements starts -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="assets/javascripts/jquery.bxslider.min.js"></script>
+    <script src="bower_components/momentjs/moment.js"></script>
+    <script src="bower_components/sheetsee.js/js/tabletop.js"></script>
     <link href="assets/jquery.bxslider.css" rel="stylesheet" />
     <!-- Image slider requirements ends -->
 
@@ -61,49 +63,11 @@
       <div class="container">
         <h2>Upcoming CoderDojo Sessions</h2>
 
-        <div class="event">
-          <h3 class="title">CoderDojo @ Thoughtworks</h3>
-          <div class="date">November 16, 2013 from 1PM to 4PM</div>
-          <p class="info">Drop-in Dojo session for working or hacking on your own projects.</p>
-          <p class="info">We are also going to experiment with a platform called <a href="http://racket-lang.org/" target="_blank">DrRacket</a>, which is based on a seasoned programming languge called Scheme.</p>
-          <p class="info">And, we will also take a look at a language called <a href="http://elm-lang.org" target="_blank">Elm</a>. Let us know your programming projects for this Drop-In Dojo through Twitter! Tweet <a href="http://www.twitter.com/coderdojonyc" target="_blank">@CoderDojoNYC</a> with hashtag #Thoughtworks.</p>
-          <p class="info">At CoderDojo, we teach kids between ages 7 and 17. If you are under 13, we kindly ask that you are accompanied by a parent.</p>
-          <a href="http://www.eventbrite.com/event/9131447405" target="_blank" class="register-button">Register now &raquo;</a>
+        <div id="upcomingReally">
         </div>
-
-        <div class="divider-no-line"></div>
-        
-        <div class="event">
-          <h3 class="title">CoderDojo @ Brooklyn Public Library</h3>
-          <div class="date">January 1st, 2014 TBA</div>
-        </div>
-
-
-        <!-- Use this section when no upcoming dojo info is available -->
-        <!-- <div class="event">
-          <p class="info">We're planning our next Dojo. <a href="#signup">Sign up for our newsletter</a> and we'll notify as soon as we've finalized all the details.</p>
-        </div> -->
-
-        <!-- Use this section for upcoming dojos -->
-        <!-- <div class="event">
-          <h3 class="title">CoderDojo @ Thoughtworks</h3>
-          <div class="date">October 10th, 2013 from 1PM to 4PM</div>
-          <p class="info">Join us and program music with <a href="http://overtone.github.io/" target="blank">Overtone</a>! We will be learning how to make simple notes, chords, and progressions as we try to reinvent old tunes and create some of our own!</p>
-          <p class="info">At CoderDojo, we teach kids between ages 7 and 18. If you are under 13, we kindly ask that you are accompanied by a parent.</p>
-          <p class="info">Those of you who want to start ahead can take a look at setting up Overtone on your own machines. If you cannot set it up, never worry! We will spend a couple of minutes getting Overtone up and running on your machines in the beginning of our workshop.</p>
-          <a href="https://www.eventbrite.com/event/8433860905" target="_blank" class="register-button">Register now &raquo;</a>
-        </div> -->
-
-        <div class="divider"></div>
 
         <h2>Previous CoderDojo Sessions</h2>
-        <div class="event">
-          <h3 class="title">CoderDojo @ Thoughtworks</h3>
-          <div class="date">October 10th, 2013 from 1PM to 4PM</div>
-          <p class="info">Join us and program music with <a href="http://overtone.github.io/" target="blank">Overtone</a>! We will be learning how to make simple notes, chords, and progressions as we try to reinvent old tunes and create some of our own!</p>
-          <p class="info">At CoderDojo, we teach kids between ages 7 and 18. If you are under 13, we kindly ask that you are accompanied by a parent.</p>
-          <p class="info">Those of you who want to start ahead can take a look at setting up Overtone on your own machines. If you cannot set it up, never worry! We will spend a couple of minutes getting Overtone up and running on your machines in the beginning of our workshop.</p>
-          <a href="https://www.eventbrite.com/event/8433860905" target="_blank" class="register-button previous-event">Register now &raquo;</a>
+        <div id="previousReally">
         </div>
       </div>
     </div>
@@ -257,12 +221,50 @@
       </div>
     </footer>
 
+    <!-- Mustache template for Events, pulled from 
+      -- https://docs.google.com/spreadsheet/pub?key=0AqPc8AzIbfoNdG84ZDI4Nm9YckNNdDJlakh0U3ZVZkE&output=html
+      -->
+    <script id="eventTemplate" type="text/html">
+      {{#notdone}}
+        <div class="event">
+          <h3 class="title">{{title}}</h3>
+          <div class="date">{{date}} from {{starttime}} to {{endtime}}</div>
+          <p class="info">{{brief}}</p>
+          <p class="info">{{detailed}}</p>
+          <p class="info">More info on our <a href="{{tumblr}}">blog post</a>.</p>
+          <p class="info">At CoderDojo, we teach kids between ages 7 and 17. If you are under 13, we kindly ask that you are accompanied by a parent.</p>
+          <a href="{{eventbrite}}" target="_blank" class="register-button">Register now &raquo;</a>
+        </div>
+      {{/notdone}}
+      {{^notdone}}
+        <div class="event">
+          <p class="info">We are planning our next Dojo. <a href="#signup">Sign up for our newsletter</a> and we'll notify as soon as we've finalized all the details.</p>
+        </div>
+      {{/notdone}}
+    </script>
+
     <script>
       $(document).ready(function(){
         $('.bxslider').bxSlider({
           captions: true
         });
       });
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var URL = "0AqPc8AzIbfoNdG84ZDI4Nm9YckNNdDJlakh0U3ZVZkE";
+        Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } ) 
+      });
+
+      function showInfo(data) {
+        var notdone = jQuery.grep(data, function(item, index){
+            return (item.done !== "TRUE");
+        });
+        var sillyArraylessTemplates = { "notdone" : notdone};
+        var rendered = ich.eventTemplate(sillyArraylessTemplates);
+
+        jQuery("#upcomingReally").html(rendered);
+    }
+
     </script>
   </body>
 </html>

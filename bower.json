@@ -1,0 +1,30 @@
+{
+  "name": "coderdojonyc",
+  "version": "0.0.1",
+  "homepage": "https://github.com/carlsednaoui/coderdojonyc",
+  "authors": [
+    "Carl Sednaoui"
+  ],
+  "description": "CoderDojo NYC website",
+  "keywords": [
+    "education",
+    "kids",
+    "coding",
+    "nyc"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handlebars.js": "~1.1.2",
+    "marked": "~0.2.10",
+    "momentjs": "~2.4.0",
+    "sheetsee.js": "jlord/sheetsee.js"
+  }
+}
