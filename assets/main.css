@@ -402,6 +402,27 @@ footer a {
   color: white;
 }
 
+
+/*****************************
+Header form
+*****************************/
+.micro-form {
+  display: inline-block;
+}
+
+.micro-form #mc-embedded-subscribe-form input[type=email]{
+  width: 200px;
+  padding: 10px;
+  font-size: 0.8em;
+}
+
+.micro-form #mc-embedded-subscribe {
+  width: 100px;
+  padding: 10px;
+  font-size: 0.8em;
+}
+
+
 /*****************************
 Responsive
 *****************************/
@@ -414,6 +435,10 @@ Responsive
 
   header .container {
     text-align: center;
+  }
+
+  .micro-form {
+    padding-top: 10px;
   }
 
   .about .video iframe {
