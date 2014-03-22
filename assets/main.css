@@ -164,6 +164,10 @@ Upcoming Sessions
   margin: 50px 0;
 }
 
+.notice {
+  color: #CF5C60;
+}
+
 .event {
   color: #35495D;
   max-width: 600px;
