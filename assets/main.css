@@ -191,6 +191,10 @@ Upcoming Sessions
   margin-bottom: 20px;
 }
 
+.event .bold {
+  font-weight: bold;
+}
+
 .event a {
   text-decoration: none;
   color: #569AC5;
